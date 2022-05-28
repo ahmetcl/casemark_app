@@ -15,8 +15,8 @@ class _sign_inState extends State<sign_in> {
   TextEditingController t1 = TextEditingController();
   TextEditingController t2 = TextEditingController();
 
-  girisYap() {
-    FirebaseAuth.instance
+  Future<void> girisYap() async {
+    await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: t1.text, password: t2.text)
         .then((kullanici) {
       Navigator.pushAndRemoveUntil(
@@ -35,7 +35,7 @@ class _sign_inState extends State<sign_in> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('ÇekGönder',
+            Text('CASE MARK APP',
                 style: TextStyle(
                     fontFamily: "RussoOne",
                     fontSize: 26,
@@ -71,6 +71,7 @@ class _sign_inState extends State<sign_in> {
                           height: 40,
                         ),
                         TextFormField(
+                          keyboardType: TextInputType.emailAddress,
                           style: TextStyle(color: Colors.black),
                           decoration: InputDecoration(
                               fillColor: Colors.white,
@@ -119,7 +120,7 @@ class _sign_inState extends State<sign_in> {
                           height: 00,
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             TextButton(
                               onPressed: () {
@@ -129,11 +130,11 @@ class _sign_inState extends State<sign_in> {
                                     (Route<dynamic> route) => true);
                               },
                               child: Text(
-                                'Sign Up',
+                                'not a member? sign up',
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
                                     decoration: TextDecoration.underline,
-                                    color: Color(0xff4c505b),
+                                    color: Color.fromARGB(255, 0, 0, 0),
                                     fontSize: 18),
                               ),
                               style: ButtonStyle(),
@@ -142,7 +143,13 @@ class _sign_inState extends State<sign_in> {
                         )
                       ],
                     ),
-                  )
+                  ),
+                  Center(
+                    child: SizedBox(
+                        width: 300,
+                        height: 300,
+                        child: Image.asset('assets/logo/cM.png')),
+                  ),
                 ],
               ),
             ],
