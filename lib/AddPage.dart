@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gelisim_app/position/district.dart';
 import 'package:gelisim_app/veritabani.dart';
+import 'package:gelisim_app/view/HomePage.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:random_string/random_string.dart';
@@ -62,6 +63,13 @@ class _GonderiEkleState extends State<GonderiEkle> {
       preferredCameraDevice: CameraDevice.rear,
     );
     setState(() {
+      if (secilenDosya == null) {
+        Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (_) => HomePage()),
+            (Route<dynamic> route) => true);
+      }
+
       _resim = File(secilenDosya!.path);
     });
   }
