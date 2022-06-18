@@ -65,11 +65,10 @@ class _map_pageState extends State<map_page> {
               position: LatLng(asyncSnapshot.data.docs[i]['location'].latitude,
                   asyncSnapshot.data.docs[i]['location'].longitude),
               icon: mapMarker,
-
-              // infoWindow: InfoWindow(
-              //   title: asyncSnapshot.data.docs[i]['olay'],
-              //   snippet: asyncSnapshot.data.docs[i]['yer'],
-              // ),
+              infoWindow: InfoWindow(
+                title: asyncSnapshot.data.docs[i]['olay'],
+                snippet: asyncSnapshot.data.docs[i]['yer'],
+              ),
             ),
           );
           print(asyncSnapshot.data.docs[i]['location'].latitude);
