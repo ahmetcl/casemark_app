@@ -27,6 +27,13 @@ samples, guidance on mobile development, and a full API reference.
 
 -GPS support instant location and pointer location is taken
 
+## Before running 
+
+Add your own firebase google-services.json file.
+
+Run with AndroidStudio or VsCode editors.
+
+
 ## Screen Shots
 
 ![preview](https://user-images.githubusercontent.com/93656127/174452001-98b31547-884d-481a-8154-135692dc2d3c.png)
