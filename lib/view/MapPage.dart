@@ -66,8 +66,8 @@ class _map_pageState extends State<map_page> {
                   asyncSnapshot.data.docs[i]['location'].longitude),
               icon: mapMarker,
               infoWindow: InfoWindow(
-                title: asyncSnapshot.data.docs[i]['olay'],
-                snippet: asyncSnapshot.data.docs[i]['yer'],
+                title: asyncSnapshot.data.docs[i]['semt'],
+                snippet: asyncSnapshot.data.docs[i]['olay'],
               ),
             ),
           );
